@@ -1,5 +1,12 @@
 import * as React from "react";
-import { View, Text, ScrollView, SafeAreaView, Button, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  SafeAreaView,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import { Feather, Entypo, MaterialIcons } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
 import { styles } from "./style.js";
@@ -13,7 +20,12 @@ export default class Cart extends React.Component {
         <View style={styles.statusBarHeight} />
         <View style={styles.header}>
           <View>
-            <MaterialIcons name="arrow-back" size={24} color="#242424" />
+            <MaterialIcons
+              name="arrow-back"
+              size={24}
+              color="#242424"
+              onPress={() => this.props.navigation.goBack()}
+            />
           </View>
           <View>
             <Text
@@ -83,11 +95,11 @@ export default class Cart extends React.Component {
           </Text>
         </View>
         <View style={styles.checkoutBox}>
-          <Text style={{fontWeight:'700'}}>
+          <Text style={{ fontWeight: "700" }}>
             GHC <Text style={{ fontSize: 28, fontWeight: "700" }}>259</Text>
           </Text>
           <TouchableOpacity style={styles.checkoutBtn}>
-            <Text style={{color:'white'}}>Check Out</Text>
+            <Text style={{ color: "white" }}>Check Out</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

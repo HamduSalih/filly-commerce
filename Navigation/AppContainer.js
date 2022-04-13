@@ -1,11 +1,14 @@
 import * as React from "react";
-import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "../Screens/Home/Container/HomeContainer";
 import Cart from "../Screens/Cart/Container/CartContainer";
+import Product from "../Screens/Product/Container/ProductContainer";
+import Tracking from "../Screens/Tracking/Container/TrackingContainer";
+import Profile from "../Screens/Profile/Container/ProfileContainer";
 
 const Homestack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -43,6 +46,24 @@ const TabScreens = () => (
         ),
       }}
     />
+    <Tab.Screen
+      name="Tracking"
+      component={Tracking}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="map-marker" size={25} color={color} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Profile"
+      component={Profile}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <FontAwesome name="user" size={25} color={color} />
+        ),
+      }}
+    />
   </Tab.Navigator>
 );
 
@@ -53,10 +74,8 @@ const AppContainer = () => (
       headerMode="None"
     >
       <MainStack.Screen name="TabScreens" component={TabScreens} />
-    <MainStack.Screen
-      name="Cart"
-      component={Cart}
-    />
+      <MainStack.Screen name="Cart" component={Cart} />
+      <MainStack.Screen name="Product" component={Product} />
     </MainStack.Navigator>
   </NavigationContainer>
 );

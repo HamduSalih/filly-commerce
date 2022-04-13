@@ -45,7 +45,7 @@ export const styles = {
     position: "absolute",
     alignItems: "center",
     width: '100%',
-    bottom: '10%',
+    bottom: '1%',
     zIndex: 1,
   },
 };

@@ -1,11 +1,16 @@
 import * as React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default class Product extends React.Component {
   render() {
     return (
-      <View style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity
+        onPress={() => {
+          this.props.navigation.navigate("Product");
+        }}
+        style={[styles.container, styles.shadowProp]}
+      >
         <View style={styles.top}>
           <View style={styles.discount}>
             <Text>40%</Text>
@@ -22,7 +27,7 @@ export default class Product extends React.Component {
             <Text style={styles.currency}>GHC</Text> {this.props.price}
           </Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }

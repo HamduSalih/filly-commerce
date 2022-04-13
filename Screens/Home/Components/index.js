@@ -100,11 +100,13 @@ export default class Home extends React.Component {
         <ScrollView contentContainerStyle={styles.scrollView}>
           <View style={styles.productRow}>
             <ProductCard
+              navigation={this.props.navigation}
               name="Nike Air Max"
               price="250.00"
               source={require("../../../assets/air-max.png")}
             />
             <ProductCard
+              navigation={this.props.navigation}
               name="TM Lewin"
               price="250.00"
               source={require("../../../assets/shirt.png")}
@@ -112,11 +114,13 @@ export default class Home extends React.Component {
           </View>
           <View style={styles.productRow}>
             <ProductCard
+              navigation={this.props.navigation}
               name="Nike Air Max"
               price="250.00"
               source={require("../../../assets/air-max.png")}
             />
             <ProductCard
+              navigation={this.props.navigation}
               name="TM Lewin"
               price="250.00"
               source={require("../../../assets/shirt.png")}
@@ -124,11 +128,13 @@ export default class Home extends React.Component {
           </View>
           <View style={styles.productRow}>
             <ProductCard
+              navigation={this.props.navigation}
               name="Nike Air Max"
               price="250.00"
               source={require("../../../assets/air-max.png")}
             />
             <ProductCard
+              navigation={this.props.navigation}
               name="TM Lewin"
               price="250.00"
               source={require("../../../assets/shirt.png")}
